@@ -162,6 +162,8 @@ public class Sudoku {
         Sudoku[8][8]=6;
         */
 
+        // Hallo Laura
+
         for (int r = 0; r < 9; r = r + 1) {
             System.out.print("| ");
             for (int i = 0; i < 9; i = i + 1) {
