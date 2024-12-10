@@ -1,33 +1,33 @@
 public class Sudoku {
-    public static void zeilePruefen(int[][] sudokuIn,int zeileIn, int spalteIn, int eingegebenerWert) {
-        for(int spalte=0; spalte<=8; spalte=spalte+1) {
-            if(sudokuIn[zeileIn][spalte]==eingegebenerWert) {
+    public static void zeilePruefen(int[][] sudokuIn, int zeileIn, int spalteIn, int eingegebenerWert) {
+        for (int spalte = 0; spalte <= 8; spalte = spalte + 1) {
+            if (sudokuIn[zeileIn][spalte] == eingegebenerWert) {
                 System.out.print("Diese Zahl gibt es schon in dieser Zeile. Versuche es erneut.\n");
             }
         }
-        for(int zeile=0; zeile<=8; zeile=zeile+1) {
-            if(sudokuIn[zeile][spalteIn]==eingegebenerWert) {
+        for (int zeile = 0; zeile <= 8; zeile = zeile + 1) {
+            if (sudokuIn[zeile][spalteIn] == eingegebenerWert) {
                 System.out.print("Diese Zahl gibt es schon in dieser Spalte. Versuche es erneut.\n");
             }
         }
 
 
-        int dividentz= zeileIn;
-        int divisor= 3;
-        int restz= dividentz%divisor;
+        int dividentz = zeileIn;
+        int divisor = 3;
+        int restz = dividentz % divisor;
         System.out.println(restz);
-        int kastenFindenz= dividentz-restz;
+        int kastenFindenz = dividentz - restz;
         System.out.print(kastenFindenz);
 
-        int dividents= spalteIn;
-        int rests= dividents%divisor;
-        int kastenFindens= dividents-rests;
+        int dividents = spalteIn;
+        int rests = dividents % divisor;
+        int kastenFindens = dividents - rests;
         System.out.print(kastenFindens);
 
         System.out.println(eingegebenerWert);
-        for(int r=kastenFindenz; r<kastenFindenz+3; r=r+1) {
-            for(int i=kastenFindens; i<kastenFindens+3; i=i+1) {
-                if(sudokuIn[r][i]==eingegebenerWert) {
+        for (int r = kastenFindenz; r < kastenFindenz + 3; r = r + 1) {
+            for (int i = kastenFindens; i < kastenFindens + 3; i = i + 1) {
+                if (sudokuIn[r][i] == eingegebenerWert) {
                     System.out.print("Diese Zahl gibt es in diesem Kasten schon. Versuche es erneut.\n");
                 }
             }
@@ -40,10 +40,37 @@ public class Sudoku {
 
         System.out.println("Welches Sudoku möchtest du überprüfen?");
 
-        int[][] Sudoku;
+//        int[][] Sudoku;
+//        Sudoku = new int[9][9];
 
-        Sudoku = new int[9][9];
+        int[][] Sudoku = {
 
+                {2, 1, 9, 5, 4, 3, 6, 7, 8},
+                {5, 4, 3, 8, 7, 6, 9, 1, 2},
+                {8, 7, 6, 2, 1, 9, 3, 4, 5},
+                {4, 3, 2, 7, 6, 5, 8, 9, 1},
+                {7, 6, 5, 1, 9, 8, 2, 3, 4},
+                {1, 9, 8, 4, 3, 2, 5, 6, 7},
+                {3, 2, 1, 6, 5, 4, 7, 8, 9},
+                {6, 5, 4, 9, 8, 7, 1, 2, 3},
+                {9, 8, 7, 3, 2, 1, 4, 5, 6}
+        };
+
+
+/*        int[][] board = {
+                {0, 0, 0, 6, 0, 0, 4, 0, 0},
+                {7, 0, 0, 0, 0, 3, 6, 0, 0},
+                {0, 0, 0, 0, 9, 1, 0, 8, 0},
+                {0, 0, 0, 0, 0, 0, 0, 0, 0},
+                {0, 5, 0, 1, 8, 0, 0, 0, 3},
+                {0, 0, 0, 3, 0, 6, 0, 4, 5},
+                {0, 4, 0, 2, 0, 0, 0, 6, 0},
+                {9, 0, 3, 0, 0, 0, 0, 0, 0},
+                {0, 2, 0, 0, 0, 0, 1, 0, 0}
+        };
+*/
+
+/*
         Sudoku[0][0]=2;
         Sudoku[1][0]=5;
         Sudoku[2][0]=8;
@@ -133,12 +160,13 @@ public class Sudoku {
         Sudoku[6][8]=9;
         Sudoku[7][8]=3;
         Sudoku[8][8]=6;
+        */
 
-        for(int r=0; r<8; r=r+1) {
-            System.out.print("|");
-            for(int i=0; i<=8; i=i+1) {
+        for (int r = 0; r < 8; r = r + 1) {
+            System.out.print("| ");
+            for (int i = 0; i < 8; i = i + 1) {
                 System.out.print(Sudoku[r][i]);
-                System.out.print("|");
+                System.out.print(" | ");
 
 
             }
