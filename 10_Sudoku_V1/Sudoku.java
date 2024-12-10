@@ -162,9 +162,9 @@ public class Sudoku {
         Sudoku[8][8]=6;
         */
 
-        for (int r = 0; r < 8; r = r + 1) {
+        for (int r = 0; r < 9; r = r + 1) {
             System.out.print("| ");
-            for (int i = 0; i < 8; i = i + 1) {
+            for (int i = 0; i < 9; i = i + 1) {
                 System.out.print(Sudoku[r][i]);
                 System.out.print(" | ");
 
